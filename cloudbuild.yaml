@@ -5,3 +5,6 @@ steps:
     # push container image to registry
     - name: 'gcr.io/cloud-builders/docker'
       args: ['push', 'gcr.io/gentle-crossbar-297404/simple-flask-image:latest']
+    # Deploy container image to Cloud Run
+    - name: 'gcr.io/cloud-builders/gcloud'
+      args: ['run', 'deploy', 'cloud-run-deploy', '--image', 'gcr.io/gentle-crossbar-297404/simple-flask-image:latest', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
