@@ -15,6 +15,8 @@ COPY src/ .
 
 RUN chmod +x app.py
 
+RUN flask FLASK_RUN_PORT=8080
+
 # command to run on container start
 ENTRYPOINT [ "python", "./app.py" ]
 
