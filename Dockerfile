@@ -13,7 +13,7 @@ RUN pip install -r requirements.txt
 # copy the content of the local src directory to the working directory
 COPY src/ .
 
-RUN chmod +x /src/app.py
+RUN chmod +x /code/src/app.py
 
 # command to run on container start
 ENTRYPOINT [ "executable" ] [ "python", "./app.py" ]
