@@ -16,6 +16,6 @@ COPY src/ .
 RUN chmod +x app.py
 
 # command to run on container start
-ENTRYPOINT [ "executable" ] [ "python", "./app.py" ]
+ENTRYPOINT [ "python", "./app.py" ]
 
 
