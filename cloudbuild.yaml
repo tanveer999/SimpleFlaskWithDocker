@@ -2,5 +2,6 @@ steps:
     # Build the container image
     - name: 'gcr.io/cloud-builders/docker'
       args: ['build', '-t', 'gcr.io/gentle-crossbar-297404/simple-flask-image:latest', '.']
+    # push container image to registry
     - name: 'gcr.io/cloud-builders/docker'
       args: ['push', 'gcr.io/gentle-crossbar-297404/simple-flask-image:latest']
