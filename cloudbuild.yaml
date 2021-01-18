@@ -8,4 +8,5 @@ steps:
     # Deploy container image to Cloud Run
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['run', 'deploy', 'simple-flask', '--image', 'gcr.io/$PROJECT_ID/simple-flask-image:latest', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
-    
+    options:
+      machineType: 'N1_HIGHCPU_32'
