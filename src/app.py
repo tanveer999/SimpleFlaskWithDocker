@@ -13,10 +13,10 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/test/login")
 def hello():
-    username = os.environ.get('USER')
-    return 'Hello ' + username
+    # username = os.environ.get('USER')
+    return f'Hello Naruto'
 
 if __name__ == 'main':
     app.run(host="0.0.0.0", port=80)
