@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 # import socket
 
 # # Create a TCP/IP socket
@@ -14,7 +15,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return 'Hello Naruto!!!'
+    username = os.environ.get('USER')
+    return 'Hello ' + username
 
 if __name__ == 'main':
     app.run(host="0.0.0.0", port=80)
