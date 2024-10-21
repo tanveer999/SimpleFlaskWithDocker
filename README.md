@@ -12,3 +12,9 @@
     ```
     docker run -d --name simpleflask -p 8080:8080 -e USER=tanveer tan66/simple-flask:v1
     ```
+
+4. To run flask app locally
+    ```
+    # where app is the prefix of app.py
+    flask --app app run
+    ```

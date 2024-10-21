@@ -1,0 +1,27 @@
+services:
+  flask-app:
+    image: flask-app:v1
+    container_name: flask-app
+    build:
+      context: ./
+      dockerfile: gunicorn.Dockerfile
+    networks:
+      - flask-app
+    ports:
+      - 5000:80
+
+  http_server:
+    image: flask-httpd-revproxy:v1
+    build:
+      context: ./
+      dockerfile: apacheRevProxy.Dockerfile
+    networks:
+      - flask-app
+    links:
+      - flask-app:fa
+    ports:
+      - 8080:80
+
+
+networks:
+  flask-app:

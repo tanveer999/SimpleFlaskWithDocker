@@ -13,14 +13,14 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /var/www/flaskapp
 COPY app.py .
-COPY apache_application.wsgi application.wsgi
+COPY apache_wsgi/apache_application.wsgi application.wsgi
 
 # Install the Python requirements
 RUN pip install flask
 
 # Copy the Apache config file
-COPY apache_vhost.conf /etc/apache2/sites-available/000-default.conf
-COPY apache_ports.conf /etc/apache2/
+COPY apache_wsgi/apache_vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY apache_wsgi/apache_ports.conf /etc/apache2/
 
 # Expose the port that Apache will run on
 EXPOSE 80
